@@ -3,17 +3,25 @@
 Calcula el Índice de Masa Corporal (IMC) usando la fórmula IMC = peso / (altura * altura) y 
 muestra la categoría correspondiente según el IMC (bajo peso, normal, sobrepeso, obesidad)*/
 
+function calcularIMC(){
 let peso = parseFloat(prompt("Introduce tu peso en kilogramos"));
 let altura = parseFloat(prompt("Introduce tu altura en metros"));
 
 let imc = peso / (altura * altura);
+let categoria = "";
+
 
 if (imc < 18.5) {
-    console.log("Bajo peso");
+    categoria="Bajo peso";
 } else if (imc >= 18.5 && imc < 25) {
-    console.log("Normal");
+    categoria="Normal";
 } else if (imc >= 25 && imc < 30) {
-    console.log("Sobrepeso");
+    categoria="Sobrepeso";
 } else {
-    console.log("Obesidad");
+    categoria="Obesidad";
+}
+
+alert(`Tu IMC es: ${imc.toFixed(2)}`);
+alert("Tu categoría es: " + categoria);
+
 }
